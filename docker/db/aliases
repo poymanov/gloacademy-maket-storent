@@ -1,0 +1,11 @@
+alias ddb=dump_db
+alias idb=import_db
+
+function dump_db() {
+    mysqldump -p maket_storent | gzip > /home/data/db.sql.gz
+}
+
+function import_db() {
+    gunzip < /home/data/db.sql.gz | mysql -p maket_storent
+}
+

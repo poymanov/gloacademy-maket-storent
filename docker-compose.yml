@@ -1,0 +1,34 @@
+version: "3.7"
+services:
+    nginx:
+        build:
+            context: docker/nginx
+            dockerfile: Dockerfile
+        ports:
+            - 8080:80
+        volumes:
+            - ./src:/var/www
+        depends_on:
+            - php
+    php:
+        build:
+            context: docker/php
+            dockerfile: php-fpm.docker
+        volumes:
+            - ./src:/var/www
+        depends_on:
+            - db
+    db:
+        build:
+            context: docker/db
+            dockerfile: Dockerfile
+        ports:
+            - 33061:3306
+        env_file:
+            - ./docker/db/.env
+        volumes:
+            - db:/var/lib/mysql
+            - ./docker/db/data:/home/data
+volumes:
+    db:
+
