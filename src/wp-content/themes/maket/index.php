@@ -209,103 +209,39 @@
     <!-- /.section-title -->
     <div class="container">
         <img src="<?= get_template_directory_uri() ?>/img/materials/materials-img.png" class="materials-img lego-img" alt="">
+
         <!-- Слайдер в секции -->
         <div class="slider">
-            <div class="slider-block">
-                <div class="slider-block__img">
-                    <img src="<?= get_template_directory_uri() ?>/img/materials/materials-slide-1/slide-1-1img.png" alt="">
+
+	        <?php
+	        global $post;
+
+	        $myposts = get_posts( [
+		        'numberposts' => 10,
+		        'category_name' => 'materials'
+	        ]);
+
+	        foreach( $myposts as $post ){
+		        setup_postdata( $post );
+		        ?>
+                <div class="slider-block">
+                    <div class="slider-block__img">
+                        <img src="<?= the_field('material_image') ?>" alt="">
+                    </div>
+                    <!-- /.slider-slider__img -->
+                    <div class="slider-block__name"><?= the_title() ?></div>
+                    <!-- /.slider-name -->
+                    <div class="slider-block__price"><?= the_field('material_price') ?></div>
+                    <!-- /.slider-price -->
+                    <a class="slider-block__button">
+                        <div class="slider-block__button_img"></div>
+                        <div class="slider-block__button_text">Купить</div>
+                    </a>
                 </div>
-                <!-- /.slider-slider__img -->
-                <div class="slider-block__name">
-                    Пенопласт
-                </div>
-                <!-- /.slider-name -->
-                <div class="slider-block__price">
-                    от 500 руб.
-                </div>
-                <!-- /.slider-price -->
-                <a class="slider-block__button">
-                    <div class="slider-block__button_img"></div>
-                    <div class="slider-block__button_text">Купить</div>
-                </a>
-            </div>
-            <!-- /.slider-block -->
-            <div class="slider-block">
-                <div class="slider-block__img">
-                    <img src="<?= get_template_directory_uri() ?>/img/materials/materials-slide-2/slide-2-1img.png" alt="">
-                </div>
-                <!-- /.slider-slider__img -->
-                <div class="slider-block__name">
-                    Пенокартон
-                </div>
-                <!-- /.slider-name -->
-                <div class="slider-block__price">
-                    от 100 руб.
-                </div>
-                <!-- /.slider-price -->
-                <a class="slider-block__button">
-                    <div class="slider-block__button_img"></div>
-                    <div class="slider-block__button_text">Купить</div>
-                </a>
-            </div>
-            <!-- /.slider-block -->
-            <div class="slider-block">
-                <div class="slider-block__img">
-                    <img src="<?= get_template_directory_uri() ?>/img/materials/materials-slide-3/slide-3-1img.png" alt="">
-                </div>
-                <!-- /.slider-slider__img -->
-                <div class="slider-block__name">
-                    ПВХ
-                </div>
-                <!-- /.slider-name -->
-                <div class="slider-block__price">
-                    от 350 руб.
-                </div>
-                <!-- /.slider-price -->
-                <a class="slider-block__button">
-                    <div class="slider-block__button_img"></div>
-                    <div class="slider-block__button_text">Купить</div>
-                </a>
-            </div>
-            <!-- /.slider-block -->
-            <div class="slider-block">
-                <div class="slider-block__img">
-                    <img src="<?= get_template_directory_uri() ?>/img/materials/materials-slide-4/slide-4-1img.png" alt="">
-                </div>
-                <!-- /.slider-slider__img -->
-                <div class="slider-block__name">
-                    Полистирол
-                </div>
-                <!-- /.slider-name -->
-                <div class="slider-block__price">
-                    от 400 руб.
-                </div>
-                <!-- /.slider-price -->
-                <a class="slider-block__button">
-                    <div class="slider-block__button_img"></div>
-                    <div class="slider-block__button_text">Купить</div>
-                </a>
-            </div>
-            <!-- /.slider-block -->
-            <div class="slider-block">
-                <div class="slider-block__img">
-                    <img src="<?= get_template_directory_uri() ?>/img/materials/materials-slide-3/slide-3-1img.png" alt="">
-                </div>
-                <!-- /.slider-slider__img -->
-                <div class="slider-block__name">
-                    ПВХ
-                </div>
-                <!-- /.slider-name -->
-                <div class="slider-block__price">
-                    от 350 руб.
-                </div>
-                <!-- /.slider-price -->
-                <a class="slider-block__button">
-                    <div class="slider-block__button_img"></div>
-                    <div class="slider-block__button_text">Купить</div>
-                </a>
-            </div>
-            <!-- /.slider-block -->
+		        <?php
+	        }
+	        wp_reset_postdata();
+	        ?>
         </div>
         <!-- /.slider -->
     </div>
@@ -324,104 +260,35 @@
         <img src="<?= get_template_directory_uri() ?>/img/tools/tools-img.png" class="tools-img lego-img" alt="">
         <!-- Слайдер в секции -->
         <div class="slider">
-            <div class="slider-block">
-                <div class="slider-block__img">
-                    <img src="<?= get_template_directory_uri() ?>/img/tools/tools-slide-1/slide-1-1img.png" alt="">
-                </div>
-                <!-- /.slider-slider__img -->
-                <div class="slider-block__name">
-                    Резак 18 мм
-                </div>
-                <!-- /.slider-name -->
-                <div class="slider-block__price">
-                    от 500 руб.
-                </div>
-                <!-- /.slider-price -->
-                <a class="slider-block__button">
-                    <div class="slider-block__button_img"></div>
-                    <div class="slider-block__button_text">Купить</div>
-                </a>
-            </div>
-            <!-- /.slider-block -->
+	        <?php
+	        global $post;
 
+	        $myposts = get_posts( [
+		        'numberposts' => 10,
+		        'category_name' => 'tools'
+	        ]);
 
-            <div class="slider-block">
-                <div class="slider-block__img">
-                    <img src="<?= get_template_directory_uri() ?>/img/tools/tools-slide-2/slide-2-1img.png" alt="">
+	        foreach( $myposts as $post ){
+		        setup_postdata( $post );
+		        ?>
+                <div class="slider-block">
+                    <div class="slider-block__img">
+                        <img src="<?= the_field('tools_image') ?>" alt="">
+                    </div>
+                    <!-- /.slider-slider__img -->
+                    <div class="slider-block__name"><?= the_title() ?></div>
+                    <!-- /.slider-name -->
+                    <div class="slider-block__price"><?= the_field('tools_price') ?></div>
+                    <!-- /.slider-price -->
+                    <a class="slider-block__button">
+                        <div class="slider-block__button_img"></div>
+                        <div class="slider-block__button_text">Купить</div>
+                    </a>
                 </div>
-                <!-- /.slider-slider__img -->
-                <div class="slider-block__name">
-                    Реказ 9 мм
-                </div>
-                <!-- /.slider-name -->
-                <div class="slider-block__price">
-                    от 100 руб.
-                </div>
-                <!-- /.slider-price -->
-                <a class="slider-block__button">
-                    <div class="slider-block__button_img"></div>
-                    <div class="slider-block__button_text">Купить</div>
-                </a>
-            </div>
-            <!-- /.slider-block -->
-            <div class="slider-block">
-                <div class="slider-block__img">
-                    <img src="<?= get_template_directory_uri() ?>/img/tools/tools-slide-3/slide-3-1img.png" alt="">
-                </div>
-                <!-- /.slider-slider__img -->
-                <div class="slider-block__name">
-                    Коврик для резки
-                </div>
-                <!-- /.slider-name -->
-                <div class="slider-block__price">
-                    от 350 руб.
-                </div>
-                <!-- /.slider-price -->
-                <a class="slider-block__button">
-                    <div class="slider-block__button_img"></div>
-                    <div class="slider-block__button_text">Купить</div>
-                </a>
-            </div>
-            <!-- /.slider-block -->
-            <div class="slider-block">
-                <div class="slider-block__img">
-                    <img src="<?= get_template_directory_uri() ?>/img/tools/tools-slide-4/slide-4-1img.png" alt="">
-                </div>
-                <!-- /.slider-slider__img -->
-                <div class="slider-block__name">
-                    Линейка
-                </div>
-                <!-- /.slider-name -->
-                <div class="slider-block__price">
-                    от 400 руб.
-                </div>
-                <!-- /.slider-price -->
-                <a class="slider-block__button">
-                    <div class="slider-block__button_img"></div>
-                    <div class="slider-block__button_text">Купить</div>
-                </a>
-            </div>
-            <!-- /.slider-block -->
-            <div class="slider-block">
-                <div class="slider-block__img">
-                    <img src="<?= get_template_directory_uri() ?>/img/tools/tools-slide-3/slide-3-1img.png" alt="">
-                </div>
-                <!-- /.slider-slider__img -->
-                <div class="slider-block__name">
-                    Коврик для резки
-                </div>
-                <!-- /.slider-name -->
-                <div class="slider-block__price">
-                    от 350 руб.
-                </div>
-                <!-- /.slider-price -->
-                <a class="slider-block__button">
-                    <div class="slider-block__button_img"></div>
-                    <div class="slider-block__button_text">Купить</div>
-                </a>
-            </div>
-            <!-- /.slider-block -->
-        </div>
+		        <?php
+	        }
+	        wp_reset_postdata();
+	        ?>
         <!-- /.slider -->
     </div>
     <!-- /.container -->
@@ -439,106 +306,35 @@
         <img src="<?= get_template_directory_uri() ?>/img/prototyping/prototyping-img.png" class="prototyping-img lego-img" alt="">
         <!-- Слайдер в секции -->
         <div class="slider">
-            <div class="slider-block">
-                <div class="slider-block__img">
-                    <img src="<?= get_template_directory_uri() ?>/img/prototyping/prototyping-slide-1/slide-1-1img.png" alt="">
+	        <?php
+	        global $post;
+
+	        $myposts = get_posts( [
+		        'numberposts' => 10,
+		        'category_name' => 'prototyping'
+	        ]);
+
+	        foreach( $myposts as $post ){
+		        setup_postdata( $post );
+		        ?>
+                <div class="slider-block">
+                    <div class="slider-block__img">
+                        <img src="<?= the_field('prototyping_image') ?>" alt="">
+                    </div>
+                    <!-- /.slider-slider__img -->
+                    <div class="slider-block__name"><?= the_title() ?></div>
+                    <!-- /.slider-name -->
+                    <div class="slider-block__price"><?= the_field('prototyping_price') ?></div>
+                    <!-- /.slider-price -->
+                    <a class="slider-block__button">
+                        <div class="slider-block__button_img"></div>
+                        <div class="slider-block__button_text">Купить</div>
+                    </a>
                 </div>
-                <!-- /.slider-slider__img -->
-                <div class="slider-block__name">
-                    Модели людей масштаб 1:50,
-                    1:87, 1:100, 1:150, 1:200
-                </div>
-                <!-- /.slider-name -->
-                <div class="slider-block__price">
-                    от 500 руб.
-                </div>
-                <!-- /.slider-price -->
-                <a class="slider-block__button">
-                    <div class="slider-block__button_img"></div>
-                    <div class="slider-block__button_text">Купить</div>
-                </a>
-            </div>
-            <!-- /.slider-block -->
-            <div class="slider-block">
-                <div class="slider-block__img">
-                    <img src="<?= get_template_directory_uri() ?>/img/prototyping/prototyping-slide-2/slide-2-1img.png" alt="">
-                </div>
-                <!-- /.slider-slider__img -->
-                <div class="slider-block__name">
-                    Модели авто масштаб 1:50,
-                    1:87, 1:100, 1:150, 1:200
-                </div>
-                <!-- /.slider-name -->
-                <div class="slider-block__price">
-                    от 100 руб.
-                </div>
-                <!-- /.slider-price -->
-                <a class="slider-block__button">
-                    <div class="slider-block__button_img"></div>
-                    <div class="slider-block__button_text">Купить</div>
-                </a>
-            </div>
-            <!-- /.slider-block -->
-            <div class="slider-block">
-                <div class="slider-block__img">
-                    <img src="<?= get_template_directory_uri() ?>/img/prototyping/prototyping-slide-3/slide-3-1img.png" alt="">
-                </div>
-                <!-- /.slider-slider__img -->
-                <div class="slider-block__name">
-                    Модели деревьев масштаб 1:50,
-                    1:87, 1:100, 1:150, 1:200
-                </div>
-                <!-- /.slider-name -->
-                <div class="slider-block__price">
-                    от 350 руб.
-                </div>
-                <!-- /.slider-price -->
-                <a class="slider-block__button">
-                    <div class="slider-block__button_img"></div>
-                    <div class="slider-block__button_text">Купить</div>
-                </a>
-            </div>
-            <!-- /.slider-block -->
-            <div class="slider-block">
-                <div class="slider-block__img">
-                    <img src="<?= get_template_directory_uri() ?>/img/prototyping/prototyping-slide-4/slide-4-1img.png" alt="">
-                </div>
-                <!-- /.slider-slider__img -->
-                <div class="slider-block__name">
-                    Модели фонарей масштаб 1:50,
-                    1:87, 1:100, 1:150, 1:200
-                </div>
-                <!-- /.slider-name -->
-                <div class="slider-block__price">
-                    от 400 руб.
-                </div>
-                <!-- /.slider-price -->
-                <a class="slider-block__button">
-                    <div class="slider-block__button_img"></div>
-                    <div class="slider-block__button_text">Купить</div>
-                </a>
-            </div>
-            <!-- /.slider-block -->
-            <div class="slider-block">
-                <div class="slider-block__img">
-                    <img src="<?= get_template_directory_uri() ?>/img/prototyping/prototyping-slide-3/slide-3-1img.png" alt="">
-                </div>
-                <!-- /.slider-slider__img -->
-                <div class="slider-block__name">
-                    Модели деревьев масштаб 1:50,
-                    1:87, 1:100, 1:150, 1:200
-                </div>
-                <!-- /.slider-name -->
-                <div class="slider-block__price">
-                    от 350 руб.
-                </div>
-                <!-- /.slider-price -->
-                <a class="slider-block__button">
-                    <div class="slider-block__button_img"></div>
-                    <div class="slider-block__button_text">Купить</div>
-                </a>
-            </div>
-            <!-- /.slider-block -->
+		        <?php
+	        }
+	        wp_reset_postdata();
+	        ?>
         </div>
         <!-- /.slider -->
     </div>
