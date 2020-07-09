@@ -51,6 +51,7 @@ button {
 .form-textarea {
   margin-bottom: 23px;
   resize: none;
+  max-height: 100px;
 }
 
 .form-button {
@@ -1945,4 +1946,8 @@ button {
   font-family: 'ProximaNova-Regular';
   src: url("../fonts/ProximaNova-Regular.ttf");
   font-style: normal;
+}
+
+.wpcf7-response-output {
+  color: #333;
 }
